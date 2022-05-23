@@ -8,8 +8,6 @@
 //}
 //
 //
-
-include 'templates/header.php';
 ?>
 <!doctype html>
 <html lang="en">
@@ -21,156 +19,45 @@ include 'templates/header.php';
         <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-        <title>Codeigniter Login with Email/Password Example</title>
+        <title>Drug List</title>
     </head>
-<div class="container bg-light">
-    <div class="h4 font-weight-bold text-center py-3">Explore more</div>
-    <div class="row">
-        <div class="col-lg-4 col-md-6 my-lg-0 my-3">
-            <div class="box bg-white">
-                <div class="d-flex align-items-center">
-                    <div
-                        class="rounded-circle mx-3 text-center d-flex align-items-center justify-content-center blue">
-                        <img src="https://freepngimg.com/thumb/microphone/11-microphone-png-image-thumb.png" alt="">
-                    </div>
-                    <div class="d-flex flex-column">
-                        <b>Public Speech</b>
-                        <a href="#">
-                            <p class="text-muted">23 classes</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6 my-lg-0 my-3">
-            <div class="box bg-white">
-                <div class="d-flex align-items-center">
-                    <div class="rounded-circle mx-3  d-flex align-items-center justify-content-center pale-orange">
-                        <img src="https://freepngimg.com/thumb/email_marketing/5-2-email-png-thumb.png" alt="">
-                    </div>
-                    <div class="d-flex flex-column">
-                        <b>Write an email</b>
-                        <a href="#">
-                            <p class="text-muted">5 classes</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6 my-lg-0 my-3">
-            <div class="box bg-white">
-                <div class="d-flex align-items-center">
-                    <div class="rounded-circle mx-3  d-flex align-items-center justify-content-center pale-purple">
-                        <img src="https://freepngimg.com/thumb/technology/40061-1-machining-robot-download-free-image-thumb.png"
-                             alt="">
-                    </div>
-                    <div class="d-flex flex-column">
-                        <b>Technology</b>
-                        <a href="#">
-                            <p class="text-muted">32 classes</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6 my-lg-3 my-3">
-            <div class="box bg-white">
-                <div class="d-flex align-items-center">
-                    <div class="rounded-circle mx-3  d-flex align-items-center justify-content-center pale-cyan">
-                        <img src="https://freepngimg.com/thumb/brain/80003-learning-human-albert-play-scientist-behavior-einstein-thumb.png"
-                             alt="">
-                    </div>
-                    <div class="d-flex flex-column">
-                        <b>Professions</b>
-                        <a href="#">
-                            <p class="text-muted">5 classes</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6 my-lg-3 my-3">
-            <div class="box bg-white">
-                <div class="d-flex align-items-center">
-                    <div class="rounded-circle mx-3  d-flex align-items-center justify-content-center pale-pink">
-                        <img src="https://freepngimg.com/thumb/google/66809-google-docs-drive-plus-android-document-thumb.png"
-                             alt="">
-                    </div>
-                    <div class="d-flex flex-column">
-                        <b>Documentation</b>
-                        <a href="#">
-                            <p class="text-muted">6 classes</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6 my-lg-3 my-3">
-            <div class="box bg-white">
-                <div class="d-flex align-items-center">
-                    <div class="rounded-circle mx-3  d-flex align-items-center justify-content-center pale-orange">
-                        <img src="https://www.freepnglogos.com/uploads/plane-png/plane-png-fort-wayne-international-airport-2.png"
-                             alt="">
-                    </div>
-                    <div class="d-flex flex-column">
-                        <b>Business Trip</b>
-                        <a href="#">
-                            <p class="text-muted">28 classes</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6 my-lg-0 my-3">
-            <div class="box bg-white">
-                <div class="d-flex align-items-center">
-                    <div class="rounded-circle mx-3  d-flex align-items-center justify-content-center pale-orange">
-                        <img src="https://www.freepnglogos.com/uploads/whatsapp-circle-message-messaging-messenger-round-icon--24.png"
-                             alt="">
-                    </div>
-                    <div class="d-flex flex-column">
-                        <b>On the Phone</b>
-                        <a href="#">
-                            <p class="text-muted">5 classes</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6 my-lg-0 my-3">
-            <div class="box bg-white">
-                <div class="d-flex align-items-center">
-                    <div class="rounded-circle mx-3  d-flex align-items-center justify-content-center pale-green">
-                        <img src="https://freepngimg.com/thumb/technology/63219-bin-recycling-computer-recycle-electronics-waste-electronic-thumb.png" alt="">
-                    </div>
-                    <div class="d-flex flex-column">
-                        <b>Electronics</b>
-                        <a href="#">
-                            <p class="text-muted">5 classes</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6 my-lg-0 my-3">
-            <div class="box bg-white">
-                <div class="d-flex align-items-center">
-                    <div class="rounded-circle mx-3  d-flex align-items-center justify-content-center pale-pista">
-                        <img src="https://freepngimg.com/thumb/happy_person/4-2-happy-person-transparent-thumb.png"
-                             alt="">
-                    </div>
-                    <div class="d-flex flex-column">
-                        <b>Job Interview</b>
-                        <a href="#">
-                            <p class="text-muted">5 classes</p>
-                        </a>
+    <div class="container bg-light">
+        <div class="h4 font-weight-bold text-center py-3">Controls</div>
+        <div class="d-flex justify-content-center">
+            <div class="col-lg-4 col-md-6 my-lg-0 my-3">
+                <div class="box bg-white">
+                    <div class="d-flex align-items-center">
+                        <div class="d-flex flex-column">
+                            <b><a href="<?=base_url('/schedule')?>" class="nav-link mx-2 btn-outline-primary">Create schedule</a></b>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+
+    <div class="container bg-light">
+        <div class="h4 font-weight-bold text-center py-3">Explore more</div>
+        <div class="row">
+            <?php foreach ($drug_list as $drug ): ?>
+            <div class="col-lg-4 col-md-6 my-lg-2 my-3">
+                <div class="box bg-white">
+                    <div class="d-flex align-items-center">
+                        <div
+                                class="rounded-circle mx-3 text-center d-flex align-items-center justify-content-center blue">
+                            <img src="https://freepngimg.com/thumb/microphone/11-microphone-png-image-thumb.png" alt="">
+                        </div>
+                        <div class="d-flex flex-column">
+                            <b><?=$drug['name']?></b>
+                            <a href="#">
+                                <p class="text-muted">23 classes</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php endforeach; ?>
+    </div>
 </html>
 
 

@@ -45,6 +45,8 @@ $routes->post('/user/login', 'User::login');
 $routes->post('/user/register', 'User::register');
 $routes->get('/signin/facebookLogin', 'Signin::facebookLogin');
 $routes->get('/drugs', 'DrugList::index');
+$routes->get('/schedule', 'Schedule::index');
+$routes->post('/schedule/', 'Schedule::store');
 
 /*
  * --------------------------------------------------------------------

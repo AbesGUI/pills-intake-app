@@ -8,5 +8,5 @@ class DrugModel extends Model
 {
     protected $table                    = 'drugs';
     protected $primaryKey               = 'drug_id';
-    protected $allowedFields            = ['name', 'drug_category_id'];
+    protected $allowedFields            = ['name', 'user_id', 'description', 'drug_category_id'];
 }

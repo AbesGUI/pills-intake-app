@@ -27,15 +27,8 @@
                 <li class="nav-item">
                     <a class="nav-link mx-2 btn-outline-primary" href="<?php echo base_url();?>/signout">Logout</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link mx-2 dropdown-toggle btn-outline-primary" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Company
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" href="#">Blog</a></li>
-                        <li><a class="dropdown-item" href="#">About Us</a></li>
-                        <li><a class="dropdown-item" href="#">Contact us</a></li>
-                    </ul>
+                <li class="nav-item">
+                    <a class="nav-link mx-2 btn-outline-primary" href="<?php echo base_url();?>/schedule">New schedule</a>
                 </li>
             </ul>
         </div>

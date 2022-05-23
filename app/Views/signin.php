@@ -8,7 +8,7 @@
         <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet">
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <title>Codeigniter Login with Email/Password Example</title>
+        <title>Sign-in</title>
     </head>
     <div class="wrapper bg-white">
         <div class="h2 text-center">Pills-Intake</div>

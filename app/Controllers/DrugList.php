@@ -14,8 +14,8 @@ class DrugList extends Controller
 
         $data['drug_list'] = $drugList;
 
-        // echo view('templates/header');
+        echo view('templates/header');
         echo view('listofdrugs', $data);
-        // echo view('templates/footer');
+        echo view('templates/footer');
     }
 }

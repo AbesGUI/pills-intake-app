@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css"
+              href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/styles/create_edit_schedule.css">
+        <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <title>Drug List</title>
+    </head>
+    <form class="pt-3" action="<?php echo base_url('/schedule/'); ?>" method="post">
+    <div class="container mt-5 mb-5 d-flex justify-content-center">
+        <div class="card px-1 py-4">
+            <div class="card-body">
+                <?php if(isset($validation)):?>
+                    <div class="alert alert-warning">
+                        <?= $validation->listErrors() ?>
+                    </div>
+                <?php endif;?>
+                <h4 class="information mt-1" style="margin-bottom: 0.5rem;">Please fill following fields</h4>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label for="drug_name">Drug name</label> <input name="drug_name" class="form-control"
+                                                                            type="text"
+                                                                            placeholder="ex. Ibalgin"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12" style="margin-top: 0.5rem;">
+                        <div class="form-group">
+                            <label for="drug_category">Drug Category</label>
+                            <select id="drug_category" name="drug_category" class="form-select"
+                                    style="margin-top: 10px; height: 48px; border: 2px solid #eee; border-radius: 10px;">
+                                <option value="none" selected disabled hidden>Select Category</option>
+                                <?php foreach ($category_list as $category): ?>
+                                    <option value="<?= $category['category_id'] ?>"><?= $category['name'] ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12" style="margin-top: 1rem;">
+                        <div class="form-group">
+                            <label for="drug_description">Description</label> <input name="drug_description"
+                                                                                     class="form-control" type="text"
+                                                                                     placeholder="ex. to cure headache">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12" style="margin-top: 1rem;">
+                        <div class="form-group">
+                            <label for="schedule_time">When</label> <input name="schedule_time" class="form-control"
+                                                                           type="time"
+                            ></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12" style="margin-top: 1rem;">
+                        <div class="form-group">
+                            <label for="schedule_to">End date</label> <input name="schedule_to" class="form-control"
+                                                                             type="date"
+                            ></div>
+                    </div>
+                </div>
+                <div class=" d-flex flex-column text-center px-5 mt-3 mb-3">
+                    <button class="btn btn-primary btn-block confirm-button">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </form>
+</html>
