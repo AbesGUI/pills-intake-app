@@ -40,7 +40,7 @@
         <div class="h4 font-weight-bold text-center py-3">Explore more</div>
         <div class="row">
             <?php foreach ($drug_list as $drug ): ?>
-            <div class="col-lg-4 col-md-6 my-lg-2 my-3">
+            <div class="col-lg-4 col-md-6 my-lg-2 my-3" onclick="location.href='<?=base_url('/drug/'.$drug['drug_id'])?>'">
                 <div class="box bg-white">
                     <div class="d-flex align-items-center">
                         <div
@@ -48,9 +48,9 @@
                             <img src="https://freepngimg.com/thumb/microphone/11-microphone-png-image-thumb.png" alt="">
                         </div>
                         <div class="d-flex flex-column">
-                            <b><?=$drug['name']?></b>
+                            <b><?=$drug['drug_name']?></b>
                             <a href="#">
-                                <p class="text-muted">23 classes</p>
+                                <p class="text-muted"><?=$drug['periodicity']?></p>
                             </a>
                         </div>
                     </div>

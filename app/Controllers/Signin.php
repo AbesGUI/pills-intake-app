@@ -43,7 +43,7 @@ class Signin extends Controller
                     'isLoggedIn' => TRUE
                 ];
                 $session->set($ses_data);
-                return redirect()->to('/profile');
+                return redirect()->to('/drugs');
             } else {
                 $session->setFlashdata('msg', 'Password is incorrect.');
                 return redirect()->to('/signin');
@@ -82,6 +82,6 @@ class Signin extends Controller
         ];
         $session->set($ses_data);
 
-        return redirect()->to('/profile');
+        return redirect()->to('/drugs');
     }
 }

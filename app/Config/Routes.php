@@ -17,7 +17,7 @@ if (file_exists(SYSTEMPATH . 'Config/Routes.php')) {
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('Product');
+$routes->setDefaultController('Signin');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
@@ -32,8 +32,7 @@ $routes->setAutoRoute(false);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-// $routes->get('/', 'Home::index');
-$routes->resource('product');
+
 $routes->get('/', 'Signin::index');
 $routes->get('/signup', 'Signup::index');
 $routes->post('/signup/', 'Signup::store');
@@ -47,6 +46,7 @@ $routes->get('/signin/facebookLogin', 'Signin::facebookLogin');
 $routes->get('/drugs', 'DrugList::index');
 $routes->get('/schedule', 'Schedule::index');
 $routes->post('/schedule/', 'Schedule::store');
+$routes->add('/drug/(:num)', 'Drug::index/$1');
 
 /*
  * --------------------------------------------------------------------

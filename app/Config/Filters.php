@@ -3,7 +3,6 @@
 namespace Config;
 
 use App\Filters\Cors;
-use App\Filters\OAuthFilter;
 use App\Filters\AuthGuard;
 use CodeIgniter\Config\BaseConfig;
 use CodeIgniter\Filters\CSRF;
@@ -27,7 +26,6 @@ class Filters extends BaseConfig
         'invalidchars'  => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
         'cors'          => Cors::class,
-        'oauthFilter'   => OAuthFilter::class,
         'authGuard'     => AuthGuard::class,
     ];
 
@@ -72,7 +70,6 @@ class Filters extends BaseConfig
      * @var array
      */
     public $filters = [
-        'oauthFilter' => ['before' => ['product', 'product/*']],
-        'authGuard' => ['before' => ['drugs', 'profile']]
+        'authGuard' => ['before' => ['drugs', 'profile', 'schedule', 'drug/*']]
     ];
 }
