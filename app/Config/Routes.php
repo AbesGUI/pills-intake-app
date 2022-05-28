@@ -45,6 +45,10 @@ $routes->post('/user/register', 'User::register');
 $routes->get('/signin/facebookLogin', 'Signin::facebookLogin');
 $routes->get('/drugs', 'DrugList::index');
 $routes->get('/schedule', 'Schedule::index');
+$routes->get('/send-code', 'RenewPassword::index');
+$routes->post('/send-code', 'RenewPassword::send_code');
+$routes->get('/renew-password', 'RenewPassword::renewal');
+$routes->post('/renew-password', 'RenewPassword::renew');
 $routes->post('/schedule/', 'Schedule::store');
 $routes->add('/drug/(:num)', 'Drug::index/$1');
 

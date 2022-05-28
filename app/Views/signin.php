@@ -31,11 +31,10 @@
                 <div class="input-field"><span class="fas fa-lock p-2"></span> <input type="password" name="password"
                                                                                       placeholder="Enter your Password"
                                                                                       required class="">
-                    <button class="btn bg-white text-muted"><span class="far fa-eye-slash"></span></button>
                 </div>
             </div>
             <div class="d-flex align-items-start">
-                <div class="ml-auto"><a href="#" id="forgot">Forgot Password?</a></div>
+                <div class="ml-auto"><a href="<?=base_url('/send-code')?>" id="forgot">Forgot Password?</a></div>
             </div>
             <button class="btn btn-block text-center my-3">Log in</button>
             <div class="text-center pt-3 text-muted">Not a member? <a href="<?php echo base_url(); ?>/signup">Sign
