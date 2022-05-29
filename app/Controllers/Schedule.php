@@ -23,7 +23,10 @@ class Schedule extends Controller
         helper(['form']);
 
         $rules = [
-            'drug_name'              => 'required|min_length[3]|max_length[20]|is_unique[drugs.name]'
+            'drug_name'              => 'required|min_length[3]|max_length[20]',
+            'drug_category'          => 'required',
+            'schedule_time'          => 'required',
+            'drug_description'       => 'max_length[50]'
         ];
 
         if($this->validate($rules)){

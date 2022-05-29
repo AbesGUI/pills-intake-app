@@ -28,7 +28,7 @@
                     <a class="nav-link mx-2 btn-outline-primary" href="<?php echo base_url();?>/signout">Logout</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mx-2 btn-outline-primary" href="<?php echo base_url();?>/schedule">New schedule</a>
+                    <a class="nav-link mx-2 btn-outline-primary <?php if(current_url() == base_url('/index.php/schedule')) { echo 'active';} ?>" href="<?php echo base_url();?>/schedule">New schedule</a>
                 </li>
             </ul>
         </div>

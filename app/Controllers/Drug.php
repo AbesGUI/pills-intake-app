@@ -10,7 +10,7 @@ class Drug extends Controller
     {
         $drug_id = $id;
         $db = db_connect();
-        $data_list = $db->query('SELECT d.user_id, d.drug_id, d.name AS drug_name,
+        $data_list = $db->query('SELECT d.user_id, d.drug_id, d.name AS drug_name, d.description,
                                 c.name AS category, s.periodicity, s.date_to
                         FROM drugs d
                             JOIN schedule s USING (drug_id)
@@ -19,10 +19,10 @@ class Drug extends Controller
 	                    WHERE d.drug_id =' .$db->escape($drug_id))->getResultArray();
 
 
-        $data['data_list'] = $data_list;
+        $data['data_list'] = $data_list[0];
 
         echo view('templates/header');
-        echo '<h1>'.$data_list[0]['drug_id'].'</h1>';
+        echo view('drug', $data);
         echo view('templates/footer');
     }
 }

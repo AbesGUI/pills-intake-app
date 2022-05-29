@@ -4,6 +4,7 @@ namespace Config;
 
 use App\Filters\Cors;
 use App\Filters\AuthGuard;
+use App\Filters\NotLoggedIn;
 use CodeIgniter\Config\BaseConfig;
 use CodeIgniter\Filters\CSRF;
 use CodeIgniter\Filters\DebugToolbar;
@@ -27,6 +28,7 @@ class Filters extends BaseConfig
         'secureheaders' => SecureHeaders::class,
         'cors'          => Cors::class,
         'authGuard'     => AuthGuard::class,
+        'notLoggedIn'   => NotLoggedIn::class,
     ];
 
     /**
@@ -70,6 +72,7 @@ class Filters extends BaseConfig
      * @var array
      */
     public $filters = [
-        'authGuard' => ['before' => ['drugs', 'profile', 'schedule', 'drug/*']]
+        'authGuard'     => ['before' => ['drugs', 'profile', 'schedule', 'drug/*', 'set-password', 'signout']],
+        'notLoggedIn'   => ['before' => ['renew-password']]
     ];
 }

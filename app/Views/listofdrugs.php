@@ -1,14 +1,3 @@
-<?php
-//
-//
-//foreach ($drug_list as $drug ) {
-//    foreach($drug as $drug_key => $drug_name) {
-//        echo '<h1>' . $drug_key . '    ' . $drug_name . '</h1><br>';
-//    }
-//}
-//
-//
-?>
 <!doctype html>
 <html lang="en">
     <head>
@@ -49,9 +38,10 @@
                         </div>
                         <div class="d-flex flex-column">
                             <b><?=$drug['drug_name']?></b>
-                            <a href="#">
-                                <p class="text-muted"><?=$drug['periodicity']?></p>
-                            </a>
+                            <?php if(!empty($drug['description'])): ?>
+                            <small><?= $drug['description']?></small>
+                            <?php endif; ?>
+                                <p class="text-muted"><?=date_format(date_create($drug['periodicity']), 'G:i')?></p>
                         </div>
                     </div>
                 </div>

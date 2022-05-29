@@ -9,7 +9,7 @@
         <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <title>Drug List</title>
+        <title>Add Schedule</title>
     </head>
     <form class="pt-3" action="<?php echo base_url('/schedule/'); ?>" method="post">
     <div class="container mt-5 mb-5 d-flex justify-content-center">
@@ -26,7 +26,8 @@
                         <div class="form-group">
                             <label for="drug_name">Drug name</label> <input name="drug_name" class="form-control"
                                                                             type="text"
-                                                                            placeholder="ex. Ibalgin"></div>
+                                                                            placeholder="ex. Ibalgin"
+                                                    value="<?php if(isset($_POST['drug_name'])) echo $_POST['drug_name']; ?>"></div>
                     </div>
                 </div>
                 <div class="row">
@@ -48,7 +49,8 @@
                         <div class="form-group">
                             <label for="drug_description">Description</label> <input name="drug_description"
                                                                                      class="form-control" type="text"
-                                                                                     placeholder="ex. to cure headache">
+                                                                                     placeholder="ex. to cure headache"
+                                                value="<?php if(isset($_POST['drug_description'])) echo $_POST['drug_description']; ?>">
                         </div>
                     </div>
                 </div>
@@ -57,7 +59,7 @@
                         <div class="form-group">
                             <label for="schedule_time">When</label> <input name="schedule_time" class="form-control"
                                                                            type="time"
-                            ></div>
+                                                                        value="<?php if(isset($_POST['schedule_time'])) echo $_POST['schedule_time']; ?>"></div>
                     </div>
                 </div>
                 <div class="row">
@@ -65,11 +67,11 @@
                         <div class="form-group">
                             <label for="schedule_to">End date</label> <input name="schedule_to" class="form-control"
                                                                              type="date"
-                            ></div>
+                                                                             value="<?php if(isset($_POST['schedule_to'])) echo $_POST['schedule_to']; ?>"></div>
                     </div>
                 </div>
                 <div class=" d-flex flex-column text-center px-5 mt-3 mb-3">
-                    <button class="btn btn-primary btn-block confirm-button">Confirm</button>
+                    <button class="btn btn-primary btn-block confirm-button">Create schedule</button>
                 </div>
             </div>
         </div>
