@@ -72,7 +72,7 @@ class Filters extends BaseConfig
      * @var array
      */
     public $filters = [
-        'authGuard'     => ['before' => ['drugs', 'profile', 'schedule', 'drug/*', 'set-password', 'signout']],
+        'authGuard'     => ['before' => ['drugs', 'profile', 'schedule', 'drug/*', 'set-password', 'signout', 'delete-drug/*', 'edit-schedule/*']],
         'notLoggedIn'   => ['before' => ['renew-password']]
     ];
 }

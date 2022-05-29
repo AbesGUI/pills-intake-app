@@ -52,7 +52,10 @@ $routes->get('/renew-password', 'RenewPassword::renewal');
 $routes->post('/renew-password', 'RenewPassword::renew');
 $routes->get('/set-password', 'RenewPassword::show_set_password');
 $routes->post('/set-password', 'RenewPassword::set_password');
+$routes->get('/delete-drug/(:num)', 'Drug::delete_drug_schedule/$1');
 $routes->add('/drug/(:num)', 'Drug::index/$1');
+$routes->get('/edit-schedule/(:num)', 'Schedule::update_drug/$1');
+$routes->post('/edit-schedule/(:num)', 'Schedule::save_update_drug/$1');
 
 /*
  * --------------------------------------------------------------------

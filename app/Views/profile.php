@@ -51,12 +51,12 @@
 
                  <?php else:?>
                      <div class="text-center px-5 mt-1 row">
-                         <div class="m-1 btn btn-primary confirm-button col"  onclick="location.href='<?=base_url('/set-password')?>'">Change password</div>
+                         <div class="m-1 btn btn-primary confirm-button col" onclick="location.href='<?=base_url('/set-password')?>'">Change password</div>
                      </div>
                  <?php endif;?>
                  <div class="d-flex justify-content-between align-items-center mt-3 px-4">
                      <div class="stats">
-                         <span>You have  <?=$drugs_count[0]['drug_id']?> pill<?php if($drugs_count[0]['drug_id'] != 1) echo 's'?> to take</span>
+                         <span>You are taking  <?=$drugs_count[0]['drug_id']?> pill<?php if($drugs_count[0]['drug_id'] != 1) echo 's'?></span>
                      </div>
 
                      </div>

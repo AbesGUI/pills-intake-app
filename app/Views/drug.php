@@ -66,7 +66,7 @@
                     <?php endif; ?>
                     <div class="d-flex row px-2 mt-3 mb-3 align-items-center">
                         <span class="col btn btn-success btn-block m-1">I took it today!</span>
-                        <span class="col btn btn-primary btn-block m-1">Edit schedule</span>
+                        <span class="col btn btn-primary btn-block m-1" onclick="location.href='<?=base_url('/edit-schedule').'/'.$data_list['drug_id']?>'">Edit schedule</span>
                     </div>
                 </div>
             </div>

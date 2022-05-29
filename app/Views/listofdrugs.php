@@ -34,7 +34,7 @@
                     <div class="d-flex align-items-center">
                         <div
                                 class="rounded-circle mx-3 text-center d-flex align-items-center justify-content-center blue">
-                            <img src="https://freepngimg.com/thumb/microphone/11-microphone-png-image-thumb.png" alt="">
+                            <img src="<?=base_url('images/pill_list.png')?>" alt="">
                         </div>
                         <div class="d-flex flex-column">
                             <b><?=$drug['drug_name']?></b>
@@ -42,6 +42,7 @@
                             <small><?= $drug['description']?></small>
                             <?php endif; ?>
                                 <p class="text-muted"><?=date_format(date_create($drug['periodicity']), 'G:i')?></p>
+                            <a class="btn-sm btn-danger text-center ml-5 mt-1" style="border-radius: 4rem; outline: none; text-decoration: none; padding: 0.3rem 1rem 0.3rem 1rem;" href="<?=base_url('/delete-drug').'/'.$drug['drug_id']?>">Remove</a>
                         </div>
                     </div>
                 </div>
