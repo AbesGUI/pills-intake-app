@@ -20,11 +20,11 @@
     <div class="container d-flex justify-content-center align-items-center">
         <div class="card">
             <div class="upper">
-                <img src="https://i.imgur.com/Qtrsrk5.jpg" class="img-fluid">
+                <img src="<?php echo base_url('/images/profile_background.jpg') ?>" class="img-fluid">
             </div>
             <div class="user text-center">
                 <div class="profile">
-                    <img src="<?php echo base_url('/images/pills.png') ?>" class="rounded-circle" width="80">
+                    <img src="<?php echo base_url('/images/user_pic.png') ?>" class="rounded-circle" width="auto">
                 </div>
             </div>
             <div class="mt-5 text-center">

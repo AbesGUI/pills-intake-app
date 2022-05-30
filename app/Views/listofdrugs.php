@@ -28,7 +28,7 @@
     </div>
 
     <div class="container bg-light">
-        <div class="h4 font-weight-bold text-center py-3">Explore more</div>
+        <div class="h4 font-weight-bold text-center py-3">Scheduled intakes</div>
         <div class="row">
             <?php foreach ($drug_list as $drug): ?>
                 <div class="col-lg-4 col-md-6 my-lg-2 my-3"
