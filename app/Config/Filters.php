@@ -40,14 +40,9 @@ class Filters extends BaseConfig
     public $globals = [
         'before' => [
             'cors',
-            // 'honeypot',
-            // 'csrf',
-            // 'invalidchars',
         ],
         'after' => [
             'toolbar',
-            // 'honeypot',
-            // 'secureheaders',
         ],
     ];
 
@@ -72,7 +67,7 @@ class Filters extends BaseConfig
      * @var array
      */
     public $filters = [
-        'authGuard'     => ['before' => ['drugs', 'profile', 'schedule', 'drug/*', 'set-password', 'signout', 'delete-drug/*', 'edit-schedule/*']],
+        'authGuard'     => ['before' => ['drugs', 'profile', 'schedule', 'drug/*', 'set-password', 'signout', 'delete-drug/*', 'edit-schedule/*', 'took-drug/*']],
         'notLoggedIn'   => ['before' => ['renew-password']]
     ];
 }

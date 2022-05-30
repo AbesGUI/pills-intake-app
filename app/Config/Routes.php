@@ -22,7 +22,6 @@ $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
 $routes->setAutoRoute(false);
-// $routes->setAutoRoute(true);
 
 /*
  * --------------------------------------------------------------------
@@ -34,28 +33,27 @@ $routes->setAutoRoute(false);
 // route since we don't have to scan directories.
 
 $routes->get('/', 'Signin::index');
+$routes->get('/send-code', 'RenewPassword::index');
+$routes->post('/send-code', 'RenewPassword::send_code');
 $routes->get('/signup', 'Signup::index');
 $routes->post('/signup/', 'Signup::store');
 $routes->get('/signin', 'Signin::index');
 $routes->post('/signin/', 'Signin::loginAuth');
-$routes->get('/profile', 'Profile::index',['filter' => 'authGuard']);
 $routes->get('/signout', 'Signout::index');
-$routes->post('/user/login', 'User::login');
-$routes->post('/user/register', 'User::register');
 $routes->get('/signin/facebookLogin', 'Signin::facebookLogin');
+$routes->get('/profile', 'Profile::index');
 $routes->get('/drugs', 'DrugList::index');
 $routes->get('/schedule', 'Schedule::index');
 $routes->post('/schedule/', 'Schedule::store');
-$routes->get('/send-code', 'RenewPassword::index');
-$routes->post('/send-code', 'RenewPassword::send_code');
+$routes->get('/edit-schedule/(:num)', 'Schedule::update_drug/$1');
+$routes->post('/edit-schedule/(:num)', 'Schedule::save_update_drug/$1');
+$routes->add('/drug/(:num)', 'Drug::index/$1');
+$routes->get('/took-drug/(:num)', 'Drug::set_took_today/$1');
+$routes->get('/delete-drug/(:num)', 'Drug::delete_drug_schedule/$1');
 $routes->get('/renew-password', 'RenewPassword::renewal');
 $routes->post('/renew-password', 'RenewPassword::renew');
 $routes->get('/set-password', 'RenewPassword::show_set_password');
 $routes->post('/set-password', 'RenewPassword::set_password');
-$routes->get('/delete-drug/(:num)', 'Drug::delete_drug_schedule/$1');
-$routes->add('/drug/(:num)', 'Drug::index/$1');
-$routes->get('/edit-schedule/(:num)', 'Schedule::update_drug/$1');
-$routes->post('/edit-schedule/(:num)', 'Schedule::save_update_drug/$1');
 
 /*
  * --------------------------------------------------------------------

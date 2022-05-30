@@ -1,14 +1,17 @@
 <?php
 
 namespace App\Libraries;
+
 use Exception;
 use Facebook\Facebook;
 
-class FacebookCall {
+class FacebookCall
+{
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->config = array(
-            'app_id'  => '5462245873807276',
+            'app_id' => '5462245873807276',
             'app_secret' => '6b0ef3ab2261e87e86b41e0f79532da4',
             'default_graph_version' => 'v4.0');
 
@@ -17,12 +20,14 @@ class FacebookCall {
         $this->fb_helper = $this->fb->getRedirectLoginHelper();
     }
 
-    public function loginURL() {
+    public function loginURL()
+    {
         $callbackUrl = htmlspecialchars('https://eso.vse.cz/~maki01/signin/facebookLogin');
         return $this->fb_helper->getLoginUrl($callbackUrl, $this->permissions);
     }
 
-    public function getFbUserData() {
+    public function getFbUserData()
+    {
         try {
             $accessToken = $this->fb_helper->getAccessToken();
         } catch (Exception $e) {

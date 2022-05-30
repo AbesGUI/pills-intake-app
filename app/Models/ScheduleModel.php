@@ -8,5 +8,5 @@ class ScheduleModel extends Model
 {
     protected $table                    = 'schedule';
     protected $primaryKey               = 'schedule_id';
-    protected $allowedFields            = ['drug_id', 'periodicity', 'date_to'];
+    protected $allowedFields            = ['drug_id', 'took_today', 'periodicity', 'date_to'];
 }

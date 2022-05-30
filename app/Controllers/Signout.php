@@ -1,5 +1,7 @@
 <?php
+
 namespace App\Controllers;
+
 use App\Libraries\OAuth;
 use CodeIgniter\API\ResponseTrait;
 use CodeIgniter\Controller;

@@ -11,32 +11,32 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <title><?= $data_list['drug_name'] ?></title>
     </head>
-        <div class="container mt-5 mb-5 d-flex justify-content-center">
-            <div class="card px-1 py-4">
-                <div class="card-body">
-                    <?php if (isset($validation)): ?>
-                        <div class="alert alert-warning">
-                            <?= $validation->listErrors() ?>
-                        </div>
-                    <?php endif; ?>
-                    <h4 class="information mt-1" style="margin-bottom: 0.5rem;">Schedule information</h4>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="form-group">
-                                <label for="drug_name">Drug name</label>
-                                <h5><?= $data_list['drug_name'] ?></h5>
-                            </div>
+    <div class="container mt-5 mb-5 d-flex justify-content-center">
+        <div class="card px-1 py-4">
+            <div class="card-body">
+                <?php if (isset($validation)): ?>
+                    <div class="alert alert-warning">
+                        <?= $validation->listErrors() ?>
+                    </div>
+                <?php endif; ?>
+                <h4 class="information mt-1" style="margin-bottom: 0.5rem;">Schedule information</h4>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label for="drug_name">Drug name</label>
+                            <h5><?= $data_list['drug_name'] ?></h5>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-sm-12" style="margin-top: 1rem;">
-                            <div class="form-group">
-                                <label for="drug_category">Drug Category</label>
-                                <h5><?= $data_list['category'] ?></h5>
-                            </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12" style="margin-top: 1rem;">
+                        <div class="form-group">
+                            <label for="drug_category">Drug Category</label>
+                            <h5><?= $data_list['category'] ?></h5>
                         </div>
                     </div>
-                    <?php if($data_list['description'] != ''): ?>
+                </div>
+                <?php if ($data_list['description'] != ''): ?>
                     <div class="row">
                         <div class="col-sm-12" style="margin-top: 1rem;">
                             <div class="form-group">
@@ -45,16 +45,16 @@
                             </div>
                         </div>
                     </div>
-                    <?php endif; ?>
-                    <div class="row">
-                        <div class="col-sm-12" style="margin-top: 1rem;">
-                            <div class="form-group">
-                                <label for="schedule_time">When</label>
-                                <h5><?= date_format(date_create($data_list['periodicity']), 'G:i') ?></h5>
-                            </div>
+                <?php endif; ?>
+                <div class="row">
+                    <div class="col-sm-12" style="margin-top: 1rem;">
+                        <div class="form-group">
+                            <label for="schedule_time">When</label>
+                            <h5><?= date_format(date_create($data_list['periodicity']), 'G:i') ?></h5>
                         </div>
                     </div>
-                    <?php if($data_list['date_to'] != '0000-00-00 00:00:00'): ?>
+                </div>
+                <?php if ($data_list['date_to'] != '0000-00-00'): ?>
                     <div class="row">
                         <div class="col-sm-12" style="margin-top: 1rem;">
                             <div class="form-group">
@@ -63,12 +63,16 @@
                             </div>
                         </div>
                     </div>
+                <?php endif; ?>
+                <div class="d-flex row px-2 mt-3 mb-3 align-items-center">
+                    <?php if ($show_took_today): ?>
+                        <span class="col btn btn-success btn-block m-1"
+                              onclick="location.href='<?= base_url('/took-drug/') . '/' . $data_list['drug_id'] ?>'">I took it today!</span>
                     <?php endif; ?>
-                    <div class="d-flex row px-2 mt-3 mb-3 align-items-center">
-                        <span class="col btn btn-success btn-block m-1">I took it today!</span>
-                        <span class="col btn btn-primary btn-block m-1" onclick="location.href='<?=base_url('/edit-schedule').'/'.$data_list['drug_id']?>'">Edit schedule</span>
-                    </div>
+                    <span class="col btn btn-primary btn-block m-1"
+                          onclick="location.href='<?= base_url('/edit-schedule') . '/' . $data_list['drug_id'] ?>'">Edit schedule</span>
                 </div>
             </div>
         </div>
+    </div>
 </html>

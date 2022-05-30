@@ -15,21 +15,21 @@
         <div class="container mt-5 mb-5 d-flex justify-content-center">
             <div class="card px-1 py-4">
                 <div class="card-body">
-                    <?php if(isset($validation)):?>
+                    <?php if (isset($validation)): ?>
                         <div class="alert alert-warning">
                             <?= $validation->listErrors() ?>
                         </div>
-                    <?php endif;?>
-                    <?php if(isset($no_code)):?>
+                    <?php endif; ?>
+                    <?php if (isset($no_code)): ?>
                         <div class="alert alert-warning">
-                            <?=$no_code?>
+                            <?= $no_code ?>
                         </div>
-                    <?php endif;?>
-                    <?php if(isset($expired)):?>
+                    <?php endif; ?>
+                    <?php if (isset($expired)): ?>
                         <div class="alert alert-warning">
-                            <?=$expired?>
+                            <?= $expired ?>
                         </div>
-                    <?php endif;?>
+                    <?php endif; ?>
                     <h4 class="information mt-1" style="margin-bottom: 0.5rem;">Please fill following fields</h4>
                     <div class="row">
                         <div class="col-sm-12">
@@ -43,16 +43,17 @@
                         <div class="col-sm-12" style="margin-top: 0.5rem;">
                             <div class="form-group">
                                 <label for="password">New Password</label> <input name="password" class="form-control"
-                                                                      type="password"
-                                                                      placeholder=""></div>
+                                                                                  type="password"
+                                                                                  placeholder=""></div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-12" style="margin-top: 0.5rem;">
                             <div class="form-group">
-                                <label for="password_confirmation">Confirm Password</label> <input name="password_confirmation" class="form-control"
-                                                                                  type="password"
-                                                                                  placeholder=""></div>
+                                <label for="password_confirmation">Confirm Password</label> <input
+                                        name="password_confirmation" class="form-control"
+                                        type="password"
+                                        placeholder=""></div>
                         </div>
                     </div>
                     <div class=" d-flex flex-column text-center px-5 mt-3 mb-3">

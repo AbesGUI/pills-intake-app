@@ -1,7 +1,8 @@
 <?php
+
 namespace App\Controllers;
+
 use CodeIgniter\API\ResponseTrait;
-use CodeIgniter\Controller;
 use App\Models\UserModel;
 
 class Signup extends BaseController
@@ -12,7 +13,7 @@ class Signup extends BaseController
     {
         helper(['form']);
 
-        if (session()->get('isLoggedIn')){
+        if (session()->get('isLoggedIn')) {
             return redirect()->to('/drugs');
         } else {
             echo view('signup');
@@ -31,7 +32,7 @@ class Signup extends BaseController
             'password_confirm'  => 'matches[password]'
         ];
 
-        if($this->validate($rules)){
+        if ($this->validate($rules)) {
             $userModel = new UserModel();
             $data = [
                 'name' => $this->request->getVar('name'),
@@ -44,15 +45,15 @@ class Signup extends BaseController
             $user_data = $userModel->where('email', $this->request->getVar('email'))->first();
 
             $ses_data = [
-                'user_id' => $user_data['user_id'],
-                'name' => $user_data['name'],
-                'email' => $user_data['email'],
-                'isLoggedIn' => TRUE
+                'user_id'        => $user_data['user_id'],
+                'name'           => $user_data['name'],
+                'email'          => $user_data['email'],
+                'isLoggedIn'     => TRUE
             ];
 
             $session->set($ses_data);
             return redirect()->to('/profile');
-        }else{
+        } else {
             $data['validation'] = $this->validator;
             echo view('signup', $data);
         }

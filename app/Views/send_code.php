@@ -15,18 +15,19 @@
         <div class="container mt-5 mb-5 d-flex justify-content-center">
             <div class="card px-1 py-4">
                 <div class="card-body">
-                    <?php if(isset($validation)):?>
+                    <?php if (isset($validation)): ?>
                         <div class="alert alert-warning">
-                            <?=$validation?>
+                            <?= $validation ?>
                         </div>
-                    <?php endif;?>
+                    <?php endif; ?>
                     <h4 class="information mt-1" style="margin-bottom: 0.5rem;">Please fill following fields</h4>
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group">
-                                <label for="email">E-mail</label><span class="fas fa-user-circle p-1"></span><input name="email" class="form-control"
-                                                                                type="email"
-                                                                                placeholder="ex. john@mail.com"></div>
+                                <label for="email">E-mail</label><span class="fas fa-user-circle p-1"></span><input
+                                        name="email" class="form-control"
+                                        type="email"
+                                        placeholder="ex. john@mail.com"></div>
                         </div>
                     </div>
                     <div class=" d-flex flex-column text-center px-5 mt-3 mb-3">

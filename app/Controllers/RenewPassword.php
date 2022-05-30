@@ -15,12 +15,11 @@ class RenewPassword extends Controller
         echo view('templates/footer');
     }
 
-
     public function send_code()
     {
         helper(['form']);
         $rules = [
-            'email' => 'required|valid_email',
+            'email'     => 'required|valid_email',
         ];
 
         $db = db_connect();
@@ -119,12 +118,12 @@ class RenewPassword extends Controller
     {
         helper(['form']);
         $rules = [
-            'password'                  => 'required|min_length[8]|max_length[36]',
-            'password_confirmation'     => 'matches[password]'
+            'password'              => 'required|min_length[8]|max_length[36]',
+            'password_confirmation' => 'matches[password]'
         ];
         $valid = $this->validate($rules);
 
-        if($valid) {
+        if ($valid) {
             $user_model = new UserModel();
             $password = password_hash($this->request->getVar('password'), PASSWORD_DEFAULT);
             $user_id = session()->get('user_id');

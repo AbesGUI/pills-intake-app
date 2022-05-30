@@ -1,10 +1,11 @@
 <?php
+
 namespace App\Controllers;
+
 use CodeIgniter\API\ResponseTrait;
 use CodeIgniter\Controller;
 use App\Models\UserModel;
 use App\Libraries\FacebookCall;
-
 
 
 class Signin extends Controller
@@ -15,7 +16,7 @@ class Signin extends Controller
     {
         helper(['form']);
 
-        if (session()->get('isLoggedIn')){
+        if (session()->get('isLoggedIn')) {
             return redirect()->to('/drugs');
         } else {
             echo view('signin');
@@ -37,10 +38,10 @@ class Signin extends Controller
             $authenticatePassword = password_verify($password, $pass);
             if ($authenticatePassword) {
                 $ses_data = [
-                    'user_id' => $data['user_id'],
-                    'name' => $data['name'],
-                    'email' => $data['email'],
-                    'isLoggedIn' => TRUE
+                    'user_id'           => $data['user_id'],
+                    'name'              => $data['name'],
+                    'email'             => $data['email'],
+                    'isLoggedIn'        => TRUE
                 ];
                 $session->set($ses_data);
                 return redirect()->to('/drugs');
@@ -67,18 +68,18 @@ class Signin extends Controller
         if (is_null($userData)) {
             $userModel = new UserModel();
             $data = [
-                'facebook_id' => $fb_data['facebook_id'],
-                'name' => $fb_data['name'],
-                'email' => $fb_data['email']
+                'facebook_id'           => $fb_data['facebook_id'],
+                'name'                  => $fb_data['name'],
+                'email'                 => $fb_data['email']
             ];
             $userModel->insert($data);
             $userData = $checkUserExistence->where('email', $fb_data['email'])->first();
         }
         $ses_data = [
-            'user_id' => $userData['user_id'],
-            'name' => $userData['name'],
-            'email' => $userData['email'],
-            'isLoggedIn' => TRUE
+            'user_id'               => $userData['user_id'],
+            'name'                  => $userData['name'],
+            'email'                 => $userData['email'],
+            'isLoggedIn'            => TRUE
         ];
         $session->set($ses_data);
 
