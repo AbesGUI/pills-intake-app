@@ -48,7 +48,7 @@
             <div class="d-flex align-items-start">
                 <div class="ml-auto"><a href="<?= base_url('/send-code') ?>" id="forgot">Forgot Password?</a></div>
             </div>
-            <button class="btn btn-block text-center my-3">Log in</button>
+            <button class="btn btn-block text-center my-3">Register</button>
             <div class="text-center pt-3 text-muted">Already a member? <a href="<?php echo base_url(); ?>/signin">Sign
                     in</a>
         </form>

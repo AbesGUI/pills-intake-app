@@ -12,7 +12,6 @@
         <title>Drug List</title>
     </head>
     <div class="container bg-light">
-        <div class="h4 font-weight-bold text-center py-3">Controls</div>
         <div class="d-flex justify-content-center">
             <div class="col-lg-4 col-md-6 my-lg-0 my-3">
                 <div class="box bg-white">
