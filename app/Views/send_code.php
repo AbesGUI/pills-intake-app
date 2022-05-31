@@ -5,13 +5,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css"
               href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/styles/create_edit_schedule.css">
+        <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/styles/create_edit_schedule.css">
         <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <title>Send Code</title>
     </head>
-    <form class="pt-3" action="<?php echo base_url('/send-code/'); ?>" method="post">
+    <form class="pt-3" action="<?= base_url('/send-code/'); ?>" method="post">
         <div class="container mt-5 mb-5 d-flex justify-content-center">
             <div class="card px-1 py-4">
                 <div class="card-body">

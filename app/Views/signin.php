@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" rel="stylesheet">
-        <link href="<?php echo base_url('/styles/signin.css'); ?>" rel="stylesheet" type="text/css">
+        <link href="<?= base_url('/styles/signin.css'); ?>" rel="stylesheet" type="text/css">
         <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet">
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -20,7 +20,7 @@
                 <?= session()->getFlashdata('msg') ?>
             </div>
         <?php endif; ?>
-        <form class="pt-3" action="<?php echo base_url(); ?>/signin/" method="post">
+        <form class="pt-3" action="<?= base_url(); ?>/signin/" method="post">
             <div class="form-group py-2">
                 <div class="input-field"><span class="far fa-user p-2"></span> <input type="email" name="email"
                                                                                       placeholder="Email Address"
@@ -37,7 +37,7 @@
                 <div class="ml-auto"><a href="<?= base_url('/send-code') ?>" id="forgot">Forgot Password?</a></div>
             </div>
             <button class="btn btn-block text-center my-3">Log in</button>
-            <div class="text-center pt-3 text-muted">Not a member? <a href="<?php echo base_url(); ?>/signup">Sign
+            <div class="text-center pt-3 text-muted">Not a member? <a href="<?= base_url(); ?>/signup">Sign
                     up</a> or
                 <?php
                 $fb_c = new FacebookCall();

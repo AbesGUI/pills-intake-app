@@ -11,7 +11,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script>
             function helpPopup() {
-                var popup = document.getElementById("helpPopup");
+                let popup = document.getElementById("helpPopup");
                 popup.classList.toggle("show");
             }
         </script>
@@ -35,7 +35,7 @@
                         <div class="m-1 btn btn-primary confirm-button col"
                              onclick="location.href='<?= base_url('/set-password') ?>'">Set password
                         </div>
-                        <div class="m-1 btn btn-primary confirm-button col popup" onclick="helpPopup()">Why should i?
+                        <div class="m-1 btn btn-primary confirm-button col popup" onclick="helpPopup()">Why should I?
                             <span class="popuptext" id="helpPopup">If you want to login not only using facebook login,
                                 but with your password, you can set it now, so you can use it to login later</span>
                         </div>

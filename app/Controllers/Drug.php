@@ -29,12 +29,11 @@ class Drug extends Controller
             $show_took_today = false;
         }
 
-        $data['data_list'] = $data_list[0];
-        $data['show_took_today'] = $show_took_today;
+        $data['data_list'] = esc($data_list[0]);
+        $data['show_took_today'] = esc($show_took_today);
 
         echo view('templates/header');
         echo view('drug', $data);
-        echo view('templates/footer');
     }
 
     public function delete_drug_schedule($id)

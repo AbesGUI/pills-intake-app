@@ -12,7 +12,6 @@ class RenewPassword extends Controller
     {
         echo view('templates/header');
         echo view('send_code');
-        echo view('templates/footer');
     }
 
     public function send_code()
@@ -54,12 +53,10 @@ class RenewPassword extends Controller
 
             echo view('templates/header');
             echo view('renew_password');
-            echo view('templates/footer');
         } else {
             $data['validation'] = 'Email not found in our database';
             echo view('templates/header');
             echo view('send_code', $data);
-            echo view('templates/footer');
         }
     }
 
@@ -67,7 +64,6 @@ class RenewPassword extends Controller
     {
         echo view('templates/header');
         echo view('send_code');
-        echo view('templates/footer');
     }
 
     public function renew()
@@ -111,7 +107,6 @@ class RenewPassword extends Controller
 
         echo view('templates/header');
         echo view('renew_password', $data);
-        echo view('templates/footer');
     }
 
     public function set_password()
@@ -135,7 +130,6 @@ class RenewPassword extends Controller
             $data['validation'] = $this->validator;
             echo view('templates/header');
             echo view('set_password', $data);
-            echo view('templates/footer');
         }
     }
 
@@ -143,6 +137,5 @@ class RenewPassword extends Controller
     {
         echo view('templates/header');
         echo view('set_password');
-        echo view('templates/footer');
     }
 }

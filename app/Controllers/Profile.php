@@ -14,7 +14,7 @@ class Profile extends Controller
         $user_model = new UserModel();
         $drugs_count = $drugs->where('user_id', session()->get('user_id'))
             ->selectCount('drug_id')->get()->getResultArray();
-        $data['drugs_count'] = $drugs_count;
+        $data['drugs_count'] = esc($drugs_count);
 
         $user_data = $user_model->where('user_id', session()->get('user_id'))->get()->getResultArray();
 
@@ -26,6 +26,5 @@ class Profile extends Controller
 
         echo view('templates/header');
         echo view('profile', $data);
-        echo view('templates/footer');
     }
 }

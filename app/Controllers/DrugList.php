@@ -19,10 +19,9 @@ class DrugList extends Controller
 	                    WHERE d.user_id =' . $db->escape(session()->get('user_id')))->getResultArray();
 
 
-        $data['drug_list'] = $data_list;
+        $data['drug_list'] = esc($data_list);
 
         echo view('templates/header');
         echo view('listofdrugs', $data);
-        echo view('templates/footer');
     }
 }

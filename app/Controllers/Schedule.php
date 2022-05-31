@@ -73,7 +73,6 @@ class Schedule extends Controller
         $data['data_list'] = $data_list[0];
         echo view('templates/header');
         echo view('edit_schedule', $data);
-        echo view('templates/footer');
     }
 
     public function save_update_drug($id)
@@ -81,9 +80,9 @@ class Schedule extends Controller
         helper(['form']);
         $db = db_connect();
         $drug_data = new DrugModel();
-        $data['drug_id'] = $id;
-        $data['category_id'] = $drug_data->where('drug_id', $id)->get()->getResultArray()[0]['drug_category_id'];
-        $data['category_list'] = $db->query("SELECT * FROM categories")->getResultArray();
+        $data['drug_id'] = esc($id);
+        $data['category_id'] = esc($drug_data->where('drug_id', $id)->get()->getResultArray()[0]['drug_category_id']);
+        $data['category_list'] = esc($db->query("SELECT * FROM categories")->getResultArray());
         $rules = [
             'drug_name'             => 'required|min_length[3]|max_length[20]',
             'drug_category'         => 'required',
@@ -115,7 +114,6 @@ class Schedule extends Controller
             $data['validation'] = $this->validator;
             echo view('templates/header');
             echo view('edit_schedule', $data);
-            echo view('templates/footer');
         }
     }
 }

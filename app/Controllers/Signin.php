@@ -20,7 +20,6 @@ class Signin extends Controller
             return redirect()->to('/drugs');
         } else {
             echo view('signin');
-            echo view('templates/footer.php');
         }
     }
 

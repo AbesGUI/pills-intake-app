@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css"
               href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/styles/create_edit_schedule.css">
+        <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/styles/create_edit_schedule.css">
         <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -28,7 +28,7 @@
                                 <label for="drug_name">Drug name</label> <input name="drug_name" class="form-control"
                                                                                 type="text"
                                                                                 placeholder="ex. Ibalgin"
-                                                                                value="<?php if (isset($_POST['drug_name'])) echo $_POST['drug_name']; elseif (isset($data_list)) echo $data_list['drug_name'] ?>">
+                                                                                value="<?php if (isset($_POST['drug_name'])) echo esc($_POST['drug_name']); elseif (isset($data_list)) echo $data_list['drug_name'] ?>">
                             </div>
                         </div>
                     </div>
@@ -55,7 +55,7 @@
                                                                                          class="form-control"
                                                                                          type="text"
                                                                                          placeholder="ex. to cure headache"
-                                                                                         value="<?php if (isset($_POST['drug_description'])) echo $_POST['drug_description']; elseif (isset($data_list)) echo $data_list['description'] ?>">
+                                                                                         value="<?php if (isset($_POST['drug_description'])) echo esc($_POST['drug_description']); elseif (isset($data_list)) echo $data_list['description'] ?>">
                             </div>
                         </div>
                     </div>
@@ -64,7 +64,7 @@
                             <div class="form-group">
                                 <label for="schedule_time">When</label> <input name="schedule_time" class="form-control"
                                                                                type="time"
-                                                                               value="<?php if (isset($_POST['schedule_time'])) echo $_POST['schedule_time']; elseif (isset($data_list)) echo $data_list['periodicity'] ?>">
+                                                                               value="<?php if (isset($_POST['schedule_time'])) echo esc($_POST['schedule_time']); elseif (isset($data_list)) echo $data_list['periodicity'] ?>">
                             </div>
                         </div>
                     </div>
@@ -74,7 +74,7 @@
                                 <label for="schedule_to">End date</label> <input name="schedule_to" class="form-control"
                                                                                  type="date"
                                                                                  min="<?= date('Y-m-d') ?>"
-                                                                                 value="<?php if (isset($_POST['schedule_to'])) echo $_POST['schedule_to']; elseif (isset($data_list)) echo $data_list['date_to']; ?>">
+                                                                                 value="<?php if (isset($_POST['schedule_to'])) echo esc($_POST['schedule_to']); elseif (isset($data_list)) echo $data_list['date_to']; ?>">
                             </div>
                         </div>
                     </div>

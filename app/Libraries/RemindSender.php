@@ -29,7 +29,7 @@ foreach ($users as $key => $value) {
         $str_to_send = '<html><head><meta charset="utf-8" /></head><body> Hi, here is your pills-intake with
             a reminder, that today you should take:<br><br>';
         foreach ($results as $drug) {
-            $str_to_send .= '<b>' . $drug['drug_name'] . '</b> at ' . date_format(date_create($drug['periodicity']), 'G:i') . '<br>';
+            $str_to_send .= '<b>' . htmlspecialchars($drug['drug_name']) . '</b> at ' . date_format(date_create($drug['periodicity']), 'G:i') . '<br>';
         }
         $str_to_send .= '<br> Sincerely yours, <br> pills-intake app</body></html>';
         $mailer->Body = $str_to_send;

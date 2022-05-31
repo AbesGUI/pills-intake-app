@@ -17,7 +17,6 @@ class Signup extends BaseController
             return redirect()->to('/drugs');
         } else {
             echo view('signup');
-            echo view('templates/footer.php');
         }
     }
 
