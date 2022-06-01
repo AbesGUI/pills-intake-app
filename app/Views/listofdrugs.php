@@ -13,7 +13,7 @@
     </head>
     <div class="container bg-light">
         <div class="d-flex justify-content-center">
-            <div class="col-lg-4 col-md-6 my-lg-0 my-3">
+            <div class="col-lg-4 col-md-6 my-lg-0 my-3 ml-3 mr-3">
                 <div class="box bg-white">
                     <div class="d-flex align-items-center">
                         <div class="d-flex flex-column">
@@ -23,9 +23,30 @@
                     </div>
                 </div>
             </div>
+            <div class="col-lg-4 col-md-6 my-lg-0 my-3 ml-3 mr-3">
+                <div class="box bg-white">
+                    <div class="d-flex align-items-center">
+                        <div class="row">
+                            <div class="col-sm-12" style="margin-top: 0.5rem;">
+                                <div class="form-group">
+                                    <form method="get" id="categoryFilterForm">
+                                    <label for="drug_category">Drug Category</label>
+                                    <select id="drug_category" name="drug_category" class="form-select"
+                                            style="margin-top: 10px; height: 48px; border: 2px solid #eee; border-radius: 10px;" onchange="document.getElementById('categoryFilterForm').submit();">
+                                        <option value="">Not set</option>
+                                        <?php foreach ($category_list as $category): ?>
+                                            <option value="<?= $category['category_id'] ?>" <?php if (isset($_GET['drug_category'])) if (esc($_GET['drug_category']) == $category['category_id']) echo 'selected'; ?>><?= $category['name'] ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
     <div class="container bg-light">
         <div class="h4 font-weight-bold text-center py-3">Scheduled intakes</div>
         <div class="row">
@@ -40,12 +61,13 @@
                             </div>
                             <div class="d-flex flex-column">
                                 <b><?= $drug['drug_name'] ?></b>
-                                <?php if ($drug['took_today'] == 1): ?>
+                                <?php if (!is_null($drug['took_id'])): ?>
                                     <span class="badge rounded-pill bg-success">Took today</span>
                                 <?php endif; ?>
                                 <?php if (!empty($drug['description'])): ?>
                                     <small><?= $drug['description'] ?></small>
                                 <?php endif; ?>
+                                <p class="text-muted"><?= $drug['category'] ?></p>
                                 <p class="text-muted"><?= date_format(date_create($drug['periodicity']), 'G:i') ?></p>
                                 <a class="btn-sm btn-danger text-center ml-5 mt-1"
                                    style="border-radius: 4rem; outline: none; text-decoration: none; padding: 0.3rem 1rem 0.3rem 1rem;"

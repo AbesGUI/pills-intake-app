@@ -49,6 +49,7 @@ $routes->get('/edit-schedule/(:num)', 'Schedule::update_drug/$1');
 $routes->post('/edit-schedule/(:num)', 'Schedule::save_update_drug/$1');
 $routes->add('/drug/(:num)', 'Drug::index/$1');
 $routes->get('/took-drug/(:num)', 'Drug::set_took_today/$1');
+$routes->get('/untook-drug/(:num)', 'Drug::set_untook_today/$1');
 $routes->get('/delete-drug/(:num)', 'Drug::delete_drug_schedule/$1');
 $routes->get('/renew-password', 'RenewPassword::renewal');
 $routes->post('/renew-password', 'RenewPassword::renew');
